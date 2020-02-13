@@ -1,0 +1,119 @@
+<!-- 메인 노선 검색 페이지 레이아웃 -->
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<link href="https://fonts.googleapis.com/css?family=David+Libre|Hind:400,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/item.css">
+	<title>NH Bus</title>
+</head>
+<body>
+<header class="cd-auto-hide-header">
+	<div class="logo">
+		<div id="wrap">
+			<a href="../how.php">
+			<div id="app">
+				<script type="text/javascript" src="js/logo_main_effect.js"></script>
+		 </div>
+	 </div>
+	</div>
+
+	<nav class="cd-primary-nav">
+		<a href="#cd-navigation" class="nav-trigger">
+			<span>
+				<em aria-hidden="true"></em>
+				Menu
+			</span>
+		</a> <!-- .nav-trigger -->
+
+		<ul id="cd-navigation">
+      <li><a href="../logout.php">로그아웃</a></li>
+      <li><a href="../info.php">회원정보</a></li>
+		</ul>
+	</nav> <!-- .cd-primary-nav -->
+
+	<nav class="cd-secondary-nav">
+		<ul>
+			<li><a class="active" href="main.php">예매</a></li>
+			<li><a href="../how.php">예매확인</a></li>
+			<li><a href="board.php">서비스</a></li>
+		</ul>
+	</nav> <!-- .cd-secondary-nav -->
+</header> <!-- .cd-auto-hide-header -->
+<main class="cd-main-content sub-nav main">
+	<form>
+	<div class="state">
+		<ul class="list-row">
+			<div>
+			<a href="#1">
+				<li class="col-item-left">
+					<div class="card-block">
+						<div class="card-title">
+							<input type="text" id="start" class="inputDat" placeholder="출발지" readonly>
+							<span class="css-arrow"></span>
+							
+						</div>
+					</div>
+				</li>
+			</a>
+			<a href="#">
+				<li class="col-item-right">
+					<div class="card-block">
+						<div class="card-title">
+							<input type="text" id="date" class="inputDat" placeholder="날짜">
+							<span class="css-arrow"></span>
+						</div>
+					</div>
+				</li>
+			</a>
+			</div>
+			<div>
+			<a href="#">
+				<li class="col-item-left">
+					<div class="card-block">
+						<div class="card-title">
+							<input type="text" id="end" class="inputDat" placeholder="도착지" readonly>
+							<span class="css-arrow"></span>
+							
+					</div>
+				</li>
+			</a>
+			<a href="javascript:void(0);">
+				<li class="col-item-right">
+					<div class="card-block">
+						<div class="card-title">
+							<p class="sbmt">조회하기</p>
+					</div>
+				</li>
+			</a>
+			<a href="javascript:void(0);">
+				<li class="col-item-left">
+					<div class="card-block">
+						<div class="card-title">
+							편도 / 왕복
+							<span class="css-arrow"></span>
+							
+					</div>
+				</li>
+			</a>
+			</div>
+		</ul>
+	</div>
+	</form>
+</main> <!-- .cd-main-content -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+	if( !window.jQuery ) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
+	flatpickr("#date");
+</script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

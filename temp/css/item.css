@@ -1,0 +1,144 @@
+.state{
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  min-width:500px;
+}
+.dir{
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid black;
+}
+.list-row{
+  list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+.col-item-left{
+  display: inline-block;
+  	min-width:200px;
+    padding: 20px;
+    margin-bottom:10px;
+    border-top: 1px solid #d3d3d3;
+    font-size: 15px;
+    width: 49%;
+}
+.col-item-left:hover{
+  box-shadow: 1px 1px 20px #d3d3d3;
+  background-color:#ddd;
+}
+.col-item-right{
+  display: inline-block;
+  	min-width:200px;
+    padding: 20px;
+    margin-bottom:10px;
+    border-top: 1px solid #d3d3d3;
+    font-size: 15px;
+    width: 49%;
+    float:right;
+}
+.col-item-right:hover{
+  box-shadow: 1px 1px 20px #d3d3d3;
+  background-color:#ddd;
+}
+.card-title{
+  color:black;
+  font-size: 24px;
+  font-weight: bold;
+}
+.card-text{
+  margin-top: 20px;
+  color: #7890A0;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+.css-arrow {
+    float:right;
+    display: inline-block;
+    position: relative;
+    margin: 0 0 0 8px;
+    padding: 0;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-left-color: #bdbebd;
+}
+.css-arrow:before, .css-arrow:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+}
+.css-arrow:before {
+    left: -30px;
+    margin-top: -10px;
+    border: 10px solid transparent;
+    border-right-color: #bdbebd;
+}
+.css-arrow:after {
+    left: -20px;
+    margin-top: -14px;
+    border: 14px solid transparent;
+    border-left-color: #eee;
+}
+		
+.col-item-right:hover .css-arrow:after{
+    border-left-color: #ddd;
+}
+.col-item-left:hover .css-arrow:after{
+    border-left-color: #ddd;
+}
+.inputDat{
+  border: 0px;
+  background-color:rgba(0,0,0,0);
+  
+  color:black;
+  font-size: 24px;
+  font-weight: bold;
+  width:100%;
+  cursor:pointer;
+}
+@media only screen and (max-width: 1024px){
+	.state{
+		margin-left: 0%;
+		margin-right: 0%;
+		margin-top: 5%;
+	}
+	.col-item-left{
+	display: inline-block;
+  	min-width:200px;
+    padding: 20px;
+    margin-bottom:10px;
+    border-top: 1px solid #d3d3d3;
+    font-size: 15px;
+    width: 95%;
+    float:left;
+	}
+	
+	.col-item-right{
+	display: inline-block;
+  	min-width:200px;
+    padding: 20px;
+    margin-bottom:10px;
+    border-top: 1px solid #d3d3d3;
+    font-size: 15px;
+    width: 95%;
+    float:left;
+	}
+	
+}
+
+.inputDat:focus{
+	outline:none;
+}
+
+.card-title .sbmt{
+	color:red;
+  	font-family: "Hind", sans-serif;
+	text-align:center;
+}

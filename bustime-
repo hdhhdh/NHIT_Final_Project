@@ -1,0 +1,87 @@
+
+	<div class="view_box">
+		<div class="lookup_left"style = "width: 25%; height: 700px; background-color: #999999; float: left; text-align: center">
+			<div class="view_title" style="font-size: 20px">
+				
+			</div>
+			<div class="view_info_lookup">
+				<div style="height: 50px; text-align: left">
+					<span>출발 : </span>
+					<span><%=start%></span>
+				</div>
+				<div style="height: 50px; text-align: left">
+					<span>도착 : </span>
+					<span><%=end%></span>
+				</div>
+				<div style="height: 30px; text-align: center; font-size:10px">
+					<span>소요시간 : </span><span>  OO시간 OO분 소요</span>
+				</div>
+			</div>
+			<div class="view_info">
+				<strong>요금정보</strong>
+				<span>(일반요금)</span>
+			</div>
+			
+		</div>
+		<div style="width: 70%; height:700px; background-color:#999999; float: right; text-align:center">
+			<input type="text" id="date" class="inputDat">
+			<hr>
+			
+			<div>
+				<div style="width:33%; float:left">출발</div>
+				<div style="width:33%; float:left">고속사/등급</div>
+				<div style="width:33%; float:left">잔여석</div>
+			</div>
+			
+			
+			<div style="margin: 80px">
+			</div>
+			
+				<form action="choiceSeat.jsp" id="bus_form" name="bus_form" method="post">
+				<%
+				for(int i =0; i<busIndex.size(); i++)
+				{	
+					try{	
+					
+						String grade = "";
+					
+						Date bus_time = new SimpleDateFormat("yyyy-MM-dd").parse(busIndex.get(i).getBus_start());
+						int indexstart = busIndex.get(i).getBus_start().indexOf(" ");	//시간만 띄우는 방법이 없어 
+						int indexend = busIndex.get(i).getBus_start().lastIndexOf(":");	//서브스트링으로 시간, 분 잘라냄
+						String rr = busIndex.get(i).getBus_start().substring(indexstart + 1, indexend);
+						
+
+						int comp = day.compareTo(bus_time);
+						if(comp == 0){
+							
+							switch(busIndex.get(i).getBus_stat()){
+							case 1:
+								grade = "일반";
+								break;
+							case 2:
+								grade = "우등";
+								break;
+							case 3:
+								grade = "프리미엄";
+								break;
+							}
+					
+				%>
+				<a href="javascript:void(0);" onclick="choiceBus(<% out.print(busIndex.get(i).getBus_id()+", "+busIndex.get(i).getBus_stat()); %>);" class="col-item">
+					<div style="width:33%; height: 30px; float:left"><%=rr %></div>
+					<div style="width:33%; height: 30px; float:left"><% out.println(busIndex.get(i).getBus_co()); %></div>
+					<div style="width:33%; height: 30px; float:left"><%=grade %></div>
+				</a>
+				<%
+						}
+					}catch(ParseException e){
+						out.println("error  "+e.getMessage());
+					}
+				}
+				%>
+				<input type="hidden" id="bus_id" name="bus_id">
+				<input type="hidden" id="bus_grade" name="bus_grade">
+				<input type="hidden" id="bus_price" name="bus_price">
+				</form>
+		</div>
+	</div>
